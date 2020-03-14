@@ -160,8 +160,8 @@ function lowerCaseStrings(strings) {
   const lowerCased = [];
   strings.forEach(string => {
     lowerCased.push(string.toLowerCase());
-  return lowerCased;
   });
+  return lowerCased;
 }
 
 /**
