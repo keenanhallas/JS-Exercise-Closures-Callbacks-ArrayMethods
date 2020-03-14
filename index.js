@@ -310,11 +310,17 @@ function tallyUpDonations(/* CODE HERE */) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
+ * In counter1, the count variable is declared within the counterMaker function, and then referenced by the counter function, essentially
+ * wrapping the count variable and protecting it from being referenced/changed directly from the global scope. In counter2, the count variable
+ * is declared on the global scope, making it much easier to access.
  * 
  * 2. Which of the two uses a closure? How can you tell?
+ * Counter 1 is using a closure because it is returning a function that is being assigned to the counter1 variable. It's remembering
+ * the context (aka the value of count) in which the returned function was called
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * Counter1 is preferrable when you want to protect the count variable from being easily changed from the global scope. Counter2
+ * is preferable when the count variable needs to be accessed all throughout the program.
 */
 
 // counter1 code
