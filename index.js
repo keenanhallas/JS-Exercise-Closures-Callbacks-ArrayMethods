@@ -157,8 +157,10 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
 */
 
 function lowerCaseStrings(strings) {
-  return strings.forEach(string => {
-    return string.toLowerCase();
+  const lowerCased = [];
+  strings.forEach(string => {
+    lowerCased.push(string.toLowerCase());
+  return lowerCased;
   });
 }
 
@@ -220,8 +222,10 @@ function removeApple(strings) {
  * 
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
-function stringSmash(/* code here */) {
-  /* code here */
+function stringSmash(strings) {
+  return strings.reduce((acc, string) => {
+    return acc + string;
+  }, "");
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
