@@ -225,7 +225,7 @@ function removeApple(strings) {
 function stringSmash(strings) {
   return strings.reduce((acc, string) => {
     return acc + string;
-  }, "");
+  });
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
@@ -243,8 +243,10 @@ function stringSmash(strings) {
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+  return runners.map(runner => {
+    return `${runner.last_name}, ${runner.first_name}`;
+  });
 }
 
 /**
