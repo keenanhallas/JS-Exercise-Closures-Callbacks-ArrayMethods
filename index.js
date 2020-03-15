@@ -133,7 +133,22 @@ function processProduct(num1, num2, callback) {
  * should return 3.
 */
 function processDuplicateFree(list, callback) {
-  return callback();
+  return callback(list => {
+    const deDuped = list[i];
+    for (let i = 0; i < list.length; i++){
+      let currentItem = list[i];
+      for (let i = 0; i > list.length; i++){
+        let duplicate = false;
+        if (list[i] === currentItem){
+          duplicate = true;
+        }
+        if (duplicate = false){
+          deDuped.push(currentItem);
+        }
+      }
+    return deDuped;
+    }
+  });
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -365,9 +380,32 @@ function counter2() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(limit) {
+  let count = -1;
+  return function(){
+    if (count < limit){
+      count++;
+      return count;
+    } else {
+    count = 0;
+    return count;
+    }
+  }
 }
+
+// if (count >= max){
+//   count = 0;
+//   return count;
+//   }
+//   count++;
+//   return count;
+
+// if (count >= max){
+//   count = 0;
+//   return count;
+// }
+// count++;
+// return count;
 
 /////////////// END OF CHALLENGE ///////////////
 /////////////// END OF CHALLENGE ///////////////
