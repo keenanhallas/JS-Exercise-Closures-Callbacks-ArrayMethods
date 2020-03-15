@@ -133,21 +133,15 @@ function processProduct(num1, num2, callback) {
  * should return 3.
 */
 function processDuplicateFree(list, callback) {
-  return callback(list => {
-    const deDuped = list[i];
-    for (let i = 0; i < list.length; i++){
-      let currentItem = list[i];
-      for (let i = 0; i > list.length; i++){
-        let duplicate = false;
-        if (list[i] === currentItem){
-          duplicate = true;
-        }
-        if (duplicate = false){
-          deDuped.push(currentItem);
-        }
+  return callback((list) => {
+    const noDuplicates = list;
+    for (i = 0; i < list.length; i++){
+      for (i2 = 0; i2 < list.length; i2++){
+        if (list[i2] === list[i] && i2 != i)
+        noDuplicates.splice(i2, 1);
       }
-    return deDuped;
     }
+    return noDuplicates;
   });
 }
 
